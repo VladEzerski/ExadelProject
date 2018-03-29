@@ -1,0 +1,36 @@
+package com.ezerski.vladislav.exadelproject.ui.service;
+
+import android.app.IntentService;
+import android.content.Intent;
+
+import com.ezerski.vladislav.exadelproject.services.DataLoader;
+
+import static com.ezerski.vladislav.exadelproject.constants.Constants.ACTION_INTENT;
+import static com.ezerski.vladislav.exadelproject.constants.Constants.ACTION_RECEIVER;
+import static com.ezerski.vladislav.exadelproject.constants.Constants.BROADCAST_MESSAGE;
+import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_KEY;
+
+public class DataDownloadService extends IntentService {
+
+    public DataDownloadService() {
+        super("DataDownloadService");
+    }
+
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        if (intent != null) {
+            final String action = intent.getAction();
+            if (ACTION_INTENT.equals(action)) {
+                final String url = intent.getStringExtra(URL_KEY);
+                dataDownload(url);
+            }
+        }
+    }
+
+    private void dataDownload(String urlString) {
+        Intent backIntent = new Intent(ACTION_RECEIVER);
+        DataLoader dataLoader = new DataLoader();
+        backIntent.putExtra(BROADCAST_MESSAGE, dataLoader.stringPostsReturner(urlString));
+        sendBroadcast(backIntent);
+    }
+}

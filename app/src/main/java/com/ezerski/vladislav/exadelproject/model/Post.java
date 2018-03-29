@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject;
+package com.ezerski.vladislav.exadelproject.model;
 
 public class Post {
     private int userId;

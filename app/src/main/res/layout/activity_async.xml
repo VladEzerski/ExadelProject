@@ -5,7 +5,8 @@
 
     <fragment
         android:id="@+id/fragment_main"
-        class="com.ezerski.vladislav.exadelproject.UI.fragments.MainFragment"
+        class="com.ezerski.vladislav.exadelproject.ui.async.fragment.MainFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
 </RelativeLayout>
