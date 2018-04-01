@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ExadelProject</string>
+
+    <string-array name="Colors">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Black</item>
+        <item>Gray</item>
+    </string-array>
+
 </resources>

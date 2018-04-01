@@ -24,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.fragmentscreen.activity.FragmentActivity" />
         <activity android:name=".ui.loader.activity.LoaderActivity" />
         <activity android:name=".ui.service.ServiceActivity" />
         <activity android:name=".ui.async.activity.AsyncTaskActivity" />

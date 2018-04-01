@@ -9,12 +9,14 @@ import android.widget.Button;
 
 import com.ezerski.vladislav.exadelproject.R;
 import com.ezerski.vladislav.exadelproject.ui.async.activity.AsyncTaskActivity;
+import com.ezerski.vladislav.exadelproject.ui.fragmentscreen.activity.FragmentActivity;
 import com.ezerski.vladislav.exadelproject.ui.loader.activity.LoaderActivity;
 import com.ezerski.vladislav.exadelproject.ui.service.ServiceActivity;
 
 public class StartActivity extends AppCompatActivity {
 
-    protected Button btnAsynkActivity;
+    protected Button btnFragmentActivity;
+    protected Button btnAsyncActivity;
     protected Button btnLoaderActivity;
     protected Button btnServiceActivity;
 
@@ -23,8 +25,15 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        btnAsynkActivity = findViewById(R.id.btn_asynk_activity);
-        btnAsynkActivity.setOnClickListener(new View.OnClickListener() {
+        btnFragmentActivity = findViewById(R.id.btn_fragment_activity);
+        btnFragmentActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FragmentActivity.class));
+            }
+        });
+        btnAsyncActivity = findViewById(R.id.btn_asynk_activity);
+        btnAsyncActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), AsyncTaskActivity.class));
