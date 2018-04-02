@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.adapters;
+package com.ezerski.vladislav.exadelproject.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.ezerski.vladislav.exadelproject.R;
-import com.ezerski.vladislav.exadelproject.Post;
+import com.ezerski.vladislav.exadelproject.model.Post;
 
 import java.util.List;
 
@@ -48,5 +48,10 @@ public class PostsAdapter extends ArrayAdapter<Post> {
         tvBody.setText("Body: " + post.getBody());
 
         return view;
+    }
+
+    public void setPosts(List<Post> data) {
+        posts.addAll(data);
+        notifyDataSetChanged();
     }
 }

@@ -5,8 +5,10 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".application.ExApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".UI.activity.MainActivity"
+            android:name=".ui.startscreen.StartActivity"
             tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.fragmentscreen.activity.FragmentActivity" />
+        <activity android:name=".ui.loader.activity.LoaderActivity" />
+        <activity android:name=".ui.service.ServiceActivity" />
+        <activity android:name=".ui.async.activity.AsyncTaskActivity" />
+
+        <service
+            android:name=".ui.service.DataDownloadService"
+            android:exported="false" />
     </application>
 
 </manifest>
