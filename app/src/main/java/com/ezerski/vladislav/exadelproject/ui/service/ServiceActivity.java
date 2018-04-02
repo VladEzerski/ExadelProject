@@ -1,15 +1,13 @@
 package com.ezerski.vladislav.exadelproject.ui.service;
 
+import android.app.ListActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
-import android.widget.ListView;
 
-import com.ezerski.vladislav.exadelproject.R;
 import com.ezerski.vladislav.exadelproject.adapter.PostsAdapter;
 import com.ezerski.vladislav.exadelproject.model.Post;
 import com.ezerski.vladislav.exadelproject.services.DataLoader;
@@ -23,9 +21,8 @@ import static com.ezerski.vladislav.exadelproject.constants.Constants.BROADCAST_
 import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_KEY;
 import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_STRING;
 
-public class ServiceActivity extends FragmentActivity {
+public class ServiceActivity extends ListActivity {
 
-    protected ListView listView;
     protected DataLoader dataLoader = new DataLoader();
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -41,15 +38,13 @@ public class ServiceActivity extends FragmentActivity {
             }
 
             adapter = new PostsAdapter(context, posts);
-            listView.setAdapter(adapter);
+            setListAdapter(adapter);
         }
     };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service);
-        listView = findViewById(R.id.list_service_view_posts);
         startingService();
     }
 

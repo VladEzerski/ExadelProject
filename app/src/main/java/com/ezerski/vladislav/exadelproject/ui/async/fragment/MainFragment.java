@@ -17,6 +17,7 @@ import com.ezerski.vladislav.exadelproject.adapter.PostsAdapter;
 
 import java.util.List;
 
+import static com.ezerski.vladislav.exadelproject.application.ExApp.getAppContext;
 import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_STRING;
 
 public class MainFragment extends Fragment {
@@ -42,7 +43,7 @@ public class MainFragment extends Fragment {
     class GettingListOfPosts extends AsyncTask<String, String, List<Post>> {
         @Override
         protected void onPostExecute(List<Post> posts) {
-            adapter = new PostsAdapter(getContext(), posts);
+            adapter = new PostsAdapter(getAppContext(), posts);
             postsListView.setAdapter(adapter);
         }
 

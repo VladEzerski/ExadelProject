@@ -14,6 +14,8 @@ import com.ezerski.vladislav.exadelproject.adapter.PostsAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.ezerski.vladislav.exadelproject.constants.Constants.LOADER_ID;
+
 public class LoaderActivity extends FragmentActivity
         implements LoaderManager.LoaderCallbacks<List<Post>> {
 
@@ -24,12 +26,12 @@ public class LoaderActivity extends FragmentActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loader);
+        setContentView(R.layout.activity_list_view);
 
         ListView listView = findViewById(R.id.list_loader_view_posts);
         adapter = new PostsAdapter(this, posts);
         listView.setAdapter(adapter);
-        getSupportLoaderManager().initLoader(1, null, this).forceLoad();
+        getSupportLoaderManager().initLoader(LOADER_ID, null, this).forceLoad();
     }
 
     @Override

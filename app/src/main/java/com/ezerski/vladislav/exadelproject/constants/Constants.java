@@ -7,4 +7,5 @@ public class Constants {
     public static final String ACTION_INTENT = "ACTION_INTENT";
     public static final String BROADCAST_MESSAGE = "BROADCAST_MESSAGE";
     public static final String ERROR = "Error!";
+    public static final int LOADER_ID = 1;
 }
