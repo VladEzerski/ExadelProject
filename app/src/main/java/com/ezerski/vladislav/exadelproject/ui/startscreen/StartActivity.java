@@ -7,10 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.ezerski.vladislav.exadelproject.R;
-import com.ezerski.vladislav.exadelproject.ui.async.activity.AsyncTaskActivity;
-import com.ezerski.vladislav.exadelproject.ui.fragmentscreen.activity.FragmentActivity;
-import com.ezerski.vladislav.exadelproject.ui.loader.activity.LoaderActivity;
-import com.ezerski.vladislav.exadelproject.ui.service.ServiceActivity;
+import com.ezerski.vladislav.exadelproject.ui.startscreen.fragmentscreen.activity.FragmentActivity;
+import com.ezerski.vladislav.exadelproject.ui.startscreen.networking.NetworkingActivity;
+import com.ezerski.vladislav.exadelproject.ui.startscreen.servicescreen.ServiceActivity;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -22,17 +21,14 @@ public class StartActivity extends AppCompatActivity {
 
     public void buttonOnClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_services:
+                startActivity(new Intent(getApplicationContext(), ServiceActivity.class));
+                break;
             case R.id.btn_fragment_activity:
                 startActivity(new Intent(getApplicationContext(), FragmentActivity.class));
                 break;
-            case R.id.btn_async_activity:
-                startActivity(new Intent(getApplicationContext(), AsyncTaskActivity.class));
-                break;
-            case R.id.btn_loader_activity:
-                startActivity(new Intent(getApplicationContext(), LoaderActivity.class));
-                break;
-            case R.id.btn_service_activity:
-                startActivity(new Intent(getApplicationContext(), ServiceActivity.class));
+            case R.id.btn_networking:
+                startActivity(new Intent(getApplicationContext(), NetworkingActivity.class));
                 break;
         }
     }

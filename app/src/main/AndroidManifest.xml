@@ -24,14 +24,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.fragmentscreen.activity.FragmentActivity" />
-        <activity android:name=".ui.loader.activity.LoaderActivity" />
-        <activity android:name=".ui.service.ServiceActivity" />
-        <activity android:name=".ui.async.activity.AsyncTaskActivity" />
+        <activity android:name=".ui.startscreen.fragmentscreen.activity.FragmentActivity" />
+        <activity android:name=".ui.startscreen.networking.loader.LoaderActivity" />
+        <activity android:name=".ui.startscreen.networking.service.IntentServiceActivity" />
+        <activity android:name=".ui.startscreen.networking.async.AsyncTaskActivity" />
+        <activity android:name=".ui.startscreen.networking.NetworkingActivity" />
+        <activity android:name=".ui.startscreen.servicescreen.ServiceActivity" />
 
         <service
-            android:name=".ui.service.DataDownloadService"
+            android:name=".ui.startscreen.networking.service.DataDownloadService"
             android:exported="false" />
+        <service
+            android:name=".ui.startscreen.servicescreen.LocalService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
