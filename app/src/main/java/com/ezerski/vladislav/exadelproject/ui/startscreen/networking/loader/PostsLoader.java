@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.loader.activity;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.loader;
 
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;

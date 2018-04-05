@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.service;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.service;
 
 import android.app.IntentService;
 import android.content.Intent;

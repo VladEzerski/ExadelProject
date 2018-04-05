@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.fragmentscreen.fragment;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.fragmentscreen.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.service;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.service;
 
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;
@@ -21,7 +21,7 @@ import static com.ezerski.vladislav.exadelproject.constants.Constants.BROADCAST_
 import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_KEY;
 import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_STRING;
 
-public class ServiceActivity extends ListActivity {
+public class IntentServiceActivity extends ListActivity {
 
     protected DataLoader dataLoader = new DataLoader();
 

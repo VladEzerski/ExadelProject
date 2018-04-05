@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.async.activity;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.async;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

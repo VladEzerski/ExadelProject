@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.fragmentscreen.activity;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.fragmentscreen.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

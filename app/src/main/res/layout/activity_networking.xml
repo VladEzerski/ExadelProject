@@ -12,26 +12,25 @@
         android:padding="16dp">
 
         <Button
-            android:id="@+id/btn_services"
+            android:id="@+id/btn_async_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="buttonOnClick"
-            android:text="Service Activity" />
+            android:text="Simple AsyncTask Activity" />
 
         <Button
-            android:id="@+id/btn_fragment_activity"
+            android:id="@+id/btn_loader_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="buttonOnClick"
-            android:text="Fragment Activity" />
+            android:text="Loader Activity" />
 
         <Button
-            android:id="@+id/btn_networking"
+            android:id="@+id/btn_service_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="buttonOnClick"
-            android:text="Networking" />
-
+            android:text="IntentService Activity" />
     </LinearLayout>
 
 </RelativeLayout>

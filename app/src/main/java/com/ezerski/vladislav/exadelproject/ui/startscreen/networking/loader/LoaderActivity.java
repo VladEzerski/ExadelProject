@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.loader.activity;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.loader;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,7 +26,7 @@ public class LoaderActivity extends FragmentActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view);
+        setContentView(R.layout.activity_loader);
 
         ListView listView = findViewById(R.id.list_loader_view_posts);
         adapter = new PostsAdapter(this, posts);

@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.ui.async.fragment;
+package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.async;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
@@ -20,7 +20,7 @@ import java.util.List;
 import static com.ezerski.vladislav.exadelproject.application.ExApp.getAppContext;
 import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_STRING;
 
-public class MainFragment extends Fragment {
+public class AsyncFragment extends Fragment {
 
     protected ListView postsListView;
 
