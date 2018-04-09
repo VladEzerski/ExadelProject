@@ -3,67 +3,71 @@ package com.ezerski.vladislav.exadelproject.ui.startscreen.servicescreen;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
+import android.os.Looper;
+import android.os.Message;
+import android.os.Process;
 import android.util.Log;
 
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 import static com.ezerski.vladislav.exadelproject.constants.Constants.BROADCAST_ACTION;
 import static com.ezerski.vladislav.exadelproject.constants.Constants.LOG_TAG;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.PARAM_RESULT;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.PARAM_STATUS;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.PARAM_TASK;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.PARAM_TIME;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.STATUS_FINISH;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.STATUS_START;
+import static com.ezerski.vladislav.exadelproject.constants.Constants.TASK1;
+import static com.ezerski.vladislav.exadelproject.constants.Constants.TASK2;
 
 public class LocalService extends Service {
-
-    protected ExecutorService executorService;
 
     private IBinder binder = new MyBinder();
 
     private Random generator = new Random();
 
+    protected boolean isRunning = false;
+
+    protected HandlerThread handlerThread;
+
+    protected Looper looper;
+
+    protected Thread mainThread = Thread.currentThread();
+
+    protected MyLocalServiceHandler localServiceHandler;
+
+
     @Override
     public void onCreate() {
         super.onCreate();
         Log.d(LOG_TAG, "LocalService onCreate");
-        executorService = Executors.newFixedThreadPool(1);
+        handlerThread = new HandlerThread("MyHandlerThread", Process.THREAD_PRIORITY_BACKGROUND);
+        handlerThread.start();
+        looper = handlerThread.getLooper();
+        localServiceHandler = new MyLocalServiceHandler(looper);
+        isRunning = true;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        isRunning = false;
         Log.d(LOG_TAG, "LocalService onDestroy");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Message msg = localServiceHandler.obtainMessage();
+        msg.arg1 = startId;
+        localServiceHandler.sendMessage(msg);
+
         Log.d(LOG_TAG, "LocalService onStartCommand");
 
-        int time = intent.getIntExtra(PARAM_TIME, 1);
-        int task = intent.getIntExtra(PARAM_TASK, 0);
-
-        MyRun myRun = new MyRun(startId, time, task);
-        executorService.execute(myRun);
-
-        return START_NOT_STICKY;
+        return START_STICKY;
     }
 
     @Override
     public IBinder onBind(Intent intent) {
         Log.d(LOG_TAG, "LocalService onBind");
         return binder;
-    }
-
-    @Override
-    public void onRebind(Intent intent) {
-        Log.d(LOG_TAG, "LocalService onReBind");
-        super.onRebind(intent);
     }
 
     @Override
@@ -76,41 +80,47 @@ public class LocalService extends Service {
         return generator.nextInt(100) + 1;
     }
 
+    public void stopLocalService() {
+        isRunning = false;
+        mainThread.interrupt();
+    }
+
     public class MyBinder extends Binder {
         LocalService getService() {
             return LocalService.this;
         }
     }
 
-    private class MyRun implements Runnable {
-
-        private int time, startId, task;
-
-        protected MyRun(int time, int startId, int task) {
-            this.time = time;
-            this.startId = startId;
-            this.task = task;
+    private class MyLocalServiceHandler extends Handler {
+        public MyLocalServiceHandler(Looper looper) {
+            super(looper);
         }
 
         @Override
-        public void run() {
-            int number = numberGenerator();
-
+        public void handleMessage(Message msg) {
+            Log.d(LOG_TAG, "Thread is running");
             Intent intent = new Intent(BROADCAST_ACTION);
-            try {
-                intent.putExtra(PARAM_TASK, task);
-                intent.putExtra(PARAM_STATUS, STATUS_START);
-                sendBroadcast(intent);
-
-                TimeUnit.SECONDS.sleep(time);
-
-                intent.putExtra(PARAM_STATUS, STATUS_FINISH);
-                intent.putExtra(PARAM_RESULT, number);
-                sendBroadcast(intent);
-            } catch (InterruptedException e) {
-                Log.e(LOG_TAG, "Broadcast error");
+            int incremNumber = 0, decremNumber = 100;
+            while (true) {
+                if (!mainThread.isInterrupted()) {
+                    Log.d(LOG_TAG, "" + incremNumber + ", " + decremNumber);
+                    intent.putExtra(TASK1, incremNumber);
+                    intent.putExtra(TASK2, decremNumber);
+                    sendBroadcast(intent);
+                    incremNumber++;
+                    decremNumber--;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        Log.d(LOG_TAG, "InterruptedException");
+                    }
+                } else {
+                    Log.d(LOG_TAG, "Service is stopped ");
+                    break;
+                }
             }
-            stopSelfResult(startId);
+            stopSelfResult(msg.arg1);
+            Log.d(LOG_TAG, "stopSelfResult = " + stopSelfResult(msg.arg1));
         }
     }
 }

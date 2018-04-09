@@ -18,12 +18,12 @@ public class ColorFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_color, container, false);
     }
 
-    public void setText(String text) {
+    public void setFragmentItemText(String text) {
         TextView textView = getView().findViewById(R.id.tv_color);
         textView.setText(text);
     }
 
-    public void setColor(int color) {
+    public void setFragmentItemColor(int color) {
         ImageView imageView = getView().findViewById(R.id.imv_color);
         imageView.setBackgroundColor(color);
     }

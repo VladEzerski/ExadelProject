@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+    <fragment
+        android:id="@+id/fragment_color_list"
+        class="com.ezerski.vladislav.exadelproject.ui.startscreen.fragmentscreen.fragment.ColorListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
-        <fragment
-            android:id="@+id/fragment_color_list"
-            class="com.ezerski.vladislav.exadelproject.ui.startscreen.fragmentscreen.fragment.ColorListFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+    <fragment
+        android:id="@+id/fragment_color"
+        class="com.ezerski.vladislav.exadelproject.ui.startscreen.fragmentscreen.fragment.ColorFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
-        <fragment
-            android:id="@+id/fragment_color"
-            class="com.ezerski.vladislav.exadelproject.ui.startscreen.fragmentscreen.fragment.ColorFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

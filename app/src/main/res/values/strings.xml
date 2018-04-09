@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ExadelProject</string>
 
+    <string name="text_in_service">Your number = </string>
+
     <string-array name="Colors">
         <item>Red</item>
         <item>Blue</item>

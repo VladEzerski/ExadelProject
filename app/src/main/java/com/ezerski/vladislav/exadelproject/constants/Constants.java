@@ -14,13 +14,7 @@ public class Constants {
     public static final int LOADER_ID = 1;
 
     //Constants for ServiceActivity
-    public static final int TASK1_CODE = 1;
-    public static final int TASK2_CODE = 2;
-    public static final int STATUS_START = 100;
-    public static final int STATUS_FINISH = 200;
-    public static final String PARAM_TASK = "task";
-    public static final String PARAM_STATUS = "status";
-    public static final String PARAM_RESULT = "result";
-    public static final String PARAM_TIME = "time";
+    public static final String TASK1 = "task1";
+    public static final String TASK2 = "task2";
     public static final String BROADCAST_ACTION = "broadcast action";
 }
