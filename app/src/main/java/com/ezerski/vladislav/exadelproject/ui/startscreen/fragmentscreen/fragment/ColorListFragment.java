@@ -32,29 +32,29 @@ public class ColorListFragment extends ListFragment implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         String item = (String) getListAdapter().getItem(position);
         ColorFragment fragment = (ColorFragment) getFragmentManager().findFragmentById(R.id.fragment_color);
-        fragment.setText(item);
-        getFragmentColor(position, fragment);
+        fragment.setFragmentItemText(item);
+        setFragmentColor(position, fragment);
     }
 
-    private void getFragmentColor(int position, ColorFragment fragment) {
+    private void setFragmentColor(int position, ColorFragment fragment) {
         switch (position) {
             case 0:
-                fragment.setColor(Color.RED);
+                fragment.setFragmentItemColor(Color.RED);
                 break;
             case 1:
-                fragment.setColor(Color.BLUE);
+                fragment.setFragmentItemColor(Color.BLUE);
                 break;
             case 2:
-                fragment.setColor(Color.GREEN);
+                fragment.setFragmentItemColor(Color.GREEN);
                 break;
             case 3:
-                fragment.setColor(Color.YELLOW);
+                fragment.setFragmentItemColor(Color.YELLOW);
                 break;
             case 4:
-                fragment.setColor(Color.BLACK);
+                fragment.setFragmentItemColor(Color.BLACK);
                 break;
             case 5:
-                fragment.setColor(Color.GRAY);
+                fragment.setFragmentItemColor(Color.GRAY);
                 break;
         }
     }

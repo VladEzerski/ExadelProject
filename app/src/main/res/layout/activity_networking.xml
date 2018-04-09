@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <Button
+        android:id="@+id/btn_async_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:onClick="buttonOnClick"
+        android:text="Simple AsyncTask Activity" />
 
-        <Button
-            android:id="@+id/btn_async_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonOnClick"
-            android:text="Simple AsyncTask Activity" />
+    <Button
+        android:id="@+id/btn_loader_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonOnClick"
+        android:text="Loader Activity" />
 
-        <Button
-            android:id="@+id/btn_loader_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonOnClick"
-            android:text="Loader Activity" />
-
-        <Button
-            android:id="@+id/btn_service_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonOnClick"
-            android:text="IntentService Activity" />
-    </LinearLayout>
-
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn_service_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonOnClick"
+        android:text="IntentService Activity" />
+</LinearLayout>
