@@ -34,10 +34,7 @@
         <service
             android:name=".ui.startscreen.networking.service.DataDownloadService"
             android:exported="false" />
-        <service
-            android:name=".ui.startscreen.servicescreen.LocalService"
-            android:enabled="true"
-            android:exported="true" />
+        <service android:name=".ui.startscreen.servicescreen.LocalService" />
     </application>
 
 </manifest>

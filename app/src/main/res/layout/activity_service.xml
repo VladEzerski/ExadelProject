@@ -1,103 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp">
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="/Broadcast/"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="/Binding/"
+                android:textStyle="bold|italic" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_task1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp">
+                android:text="Task1"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="/Broadcast/"
-                    android:textStyle="bold|italic" />
-
-                <TextView
-                    android:id="@+id/tv_task1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Task1"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tv_task2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Task2"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tv_task3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp">
+                android:text="Task3"
+                android:textSize="16sp" />
+        </TableRow>
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="/Binding/"
-                    android:textStyle="bold|italic" />
-
-                <TextView
-                    android:id="@+id/tv_task3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Task3"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tv_task4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Task4"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_start_service"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:onClick="btnOnClick"
-            android:text="Start Service" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_stop_service"
+            <TextView
+                android:id="@+id/tv_task2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Task2"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_task4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Task4"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btnOnClick"
-            android:text="Stop Service" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_bind_service"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btnOnClick"
-            android:text="Make Binding Task" />
+            <Button
+                android:id="@+id/btn_start_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnOnClick"
+                android:text="Start Service" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_stop_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnOnClick"
+                android:text="Stop Service" />
+        </TableRow>
 
-</RelativeLayout>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btn_bind_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnOnClick"
+        android:text="Make Local Binding" />
+
+    <Button
+        android:id="@+id/btn_aidl_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnOnClick"
+        android:text="AIDL server" />
+
+</LinearLayout>
