@@ -3,12 +3,12 @@ package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.service;
 import android.app.IntentService;
 import android.content.Intent;
 
-import com.ezerski.vladislav.exadelproject.services.DataLoader;
+import com.ezerski.vladislav.utils.network.DataLoader;
 
-import static com.ezerski.vladislav.exadelproject.constants.Constants.ACTION_INTENT;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.ACTION_RECEIVER;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.BROADCAST_MESSAGE;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_KEY;
+import static com.ezerski.vladislav.utils.constants.Constants.ACTION_INTENT;
+import static com.ezerski.vladislav.utils.constants.Constants.ACTION_RECEIVER;
+import static com.ezerski.vladislav.utils.constants.Constants.BROADCAST_MESSAGE;
+import static com.ezerski.vladislav.utils.constants.Constants.URL_KEY;
 
 public class DataDownloadService extends IntentService {
 

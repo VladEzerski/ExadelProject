@@ -1,9 +1,9 @@
-package com.ezerski.vladislav.exadelproject.services;
+package com.ezerski.vladislav.utils.network;
 
 import android.util.Log;
 import android.widget.Toast;
 
-import com.ezerski.vladislav.exadelproject.model.Post;
+import com.ezerski.vladislav.utils.model.Post;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -18,18 +18,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
-import static com.ezerski.vladislav.exadelproject.application.ExApp.getAppContext;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.ERROR;
+import static com.ezerski.vladislav.utils.constants.Constants.ERROR;
+import static com.ezerski.vladislav.utils.constants.Constants.LOG_TAG;
+import static com.ezerski.vladislav.utils.application.ExApp.getAppContext;
 
 public class DataLoader {
 
     public String stringPostsReturner(String urlString) {
         String dataString = null;
-        HttpURLConnection urlConnection = null;
+        HttpURLConnection urlConnection;
         try {
             URL url = new URL(urlString);
             urlConnection = (HttpURLConnection) url.openConnection();
 
+            urlConnection.setRequestMethod("GET");
+            urlConnection.connect();
+            int rescode = (urlConnection).getResponseCode();
+            Log.d(LOG_TAG, "mylog" + rescode);
             int responseCode = urlConnection.getResponseCode();
 
             if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -37,12 +42,10 @@ public class DataLoader {
             } else {
                 Toast.makeText(getAppContext(), "Error", Toast.LENGTH_SHORT).show();
             }
+
+            (urlConnection).disconnect();
         } catch (IOException e) {
             Log.e(TAG, ERROR, e);
-        } finally {
-            if (urlConnection != null) {
-                urlConnection.disconnect();
-            }
         }
         return dataString;
     }
@@ -60,16 +63,9 @@ public class DataLoader {
             while ((line = reader.readLine()) != null) {
                 response.append(line);
             }
+            reader.close();
         } catch (IOException e) {
             Log.e(TAG, ERROR, e);
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    Log.e(TAG, ERROR, e);
-                }
-            }
         }
         return response.toString();
     }

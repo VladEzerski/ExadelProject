@@ -7,14 +7,14 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.widget.ListView;
 
-import com.ezerski.vladislav.exadelproject.model.Post;
 import com.ezerski.vladislav.exadelproject.R;
-import com.ezerski.vladislav.exadelproject.adapter.PostsAdapter;
+import com.ezerski.vladislav.utils.model.Post;
+import com.ezerski.vladislav.utils.model.PostsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.ezerski.vladislav.exadelproject.constants.Constants.LOADER_ID;
+import static com.ezerski.vladislav.utils.constants.Constants.LOADER_ID;
 
 public class LoaderActivity extends FragmentActivity
         implements LoaderManager.LoaderCallbacks<List<Post>> {

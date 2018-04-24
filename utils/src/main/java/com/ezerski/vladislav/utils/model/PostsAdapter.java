@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.adapter;
+package com.ezerski.vladislav.utils.model;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,8 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.ezerski.vladislav.exadelproject.R;
-import com.ezerski.vladislav.exadelproject.model.Post;
+import com.ezerski.vladislav.utils.R;
 
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class PostsAdapter extends ArrayAdapter<Post> {
     private List<Post> posts;
 
     public PostsAdapter(Context context, List<Post> posts) {
-        super(context, R.layout.list_item, posts);
+        super(context, R.layout.list_item3, posts);
         this.posts = posts;
         inflater = LayoutInflater.from(context);
     }
@@ -31,14 +30,14 @@ public class PostsAdapter extends ArrayAdapter<Post> {
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View view;
         if (convertView == null) {
-            view = inflater.inflate(R.layout.list_item, parent, false);
+            view = inflater.inflate(R.layout.list_item3, parent, false);
         } else {
             view = convertView;
         }
-        TextView tvUserId = view.findViewById(R.id.tv_user_id);
-        TextView tvId = view.findViewById(R.id.tv_id);
-        TextView tvTitle = view.findViewById(R.id.tv_title);
-        TextView tvBody = view.findViewById(R.id.tv_body);
+        TextView tvUserId = view.findViewById(R.id.tv_user_id3);
+        TextView tvId = view.findViewById(R.id.tv_id3);
+        TextView tvTitle = view.findViewById(R.id.tv_title3);
+        TextView tvBody = view.findViewById(R.id.tv_body3);
 
         Post post = posts.get(position);
 
