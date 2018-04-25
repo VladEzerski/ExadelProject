@@ -23,10 +23,10 @@ import com.ezerski.vladislav.exadelprojectserver.IAidlInterface;
 
 import java.util.List;
 
-import static com.ezerski.vladislav.exadelproject.constants.Constants.BROADCAST_ACTION;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.LOG_TAG;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.TASK1;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.TASK2;
+import static com.ezerski.vladislav.utils.constants.Constants.BROADCAST_ACTION;
+import static com.ezerski.vladislav.utils.constants.Constants.LOG_TAG;
+import static com.ezerski.vladislav.utils.constants.Constants.TASK1;
+import static com.ezerski.vladislav.utils.constants.Constants.TASK2;
 
 public class ServiceActivity extends AppCompatActivity {
 

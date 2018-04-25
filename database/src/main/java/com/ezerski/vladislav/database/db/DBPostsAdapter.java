@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.adapter;
+package com.ezerski.vladislav.database.db;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,18 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.ezerski.vladislav.exadelproject.R;
-import com.ezerski.vladislav.exadelproject.model.Post;
+import com.ezerski.vladislav.database.R;
+import com.ezerski.vladislav.utils.model.Post;
 
 import java.util.List;
 
-public class PostsAdapter extends ArrayAdapter<Post> {
-
+public class DBPostsAdapter extends ArrayAdapter<Post> {
     private LayoutInflater inflater = null;
     private List<Post> posts;
 
-    public PostsAdapter(Context context, List<Post> posts) {
-        super(context, R.layout.list_item, posts);
+    public DBPostsAdapter(Context context, List<Post> posts) {
+        super(context, R.layout.list_item2, posts);
         this.posts = posts;
         inflater = LayoutInflater.from(context);
     }
@@ -31,19 +30,17 @@ public class PostsAdapter extends ArrayAdapter<Post> {
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View view;
         if (convertView == null) {
-            view = inflater.inflate(R.layout.list_item, parent, false);
+            view = inflater.inflate(R.layout.list_item2, parent, false);
         } else {
             view = convertView;
         }
-        TextView tvUserId = view.findViewById(R.id.tv_user_id);
-        TextView tvId = view.findViewById(R.id.tv_id);
-        TextView tvTitle = view.findViewById(R.id.tv_title);
-        TextView tvBody = view.findViewById(R.id.tv_body);
+        TextView tvUserId = view.findViewById(R.id.tv_user_id2);
+        TextView tvTitle = view.findViewById(R.id.tv_title2);
+        TextView tvBody = view.findViewById(R.id.tv_body2);
 
         Post post = posts.get(position);
 
         tvUserId.setText("UserID: " + String.valueOf(post.getUserId()));
-        tvId.setText("ID: " + String.valueOf(post.getId()));
         tvTitle.setText("Title: " + post.getTitle());
         tvBody.setText("Body: " + post.getBody());
 

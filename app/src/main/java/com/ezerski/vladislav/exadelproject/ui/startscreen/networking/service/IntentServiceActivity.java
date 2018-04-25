@@ -8,18 +8,18 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.ezerski.vladislav.exadelproject.adapter.PostsAdapter;
-import com.ezerski.vladislav.exadelproject.model.Post;
-import com.ezerski.vladislav.exadelproject.services.DataLoader;
+import com.ezerski.vladislav.utils.network.DataLoader;
+import com.ezerski.vladislav.utils.model.Post;
+import com.ezerski.vladislav.utils.model.PostsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.ezerski.vladislav.exadelproject.constants.Constants.ACTION_INTENT;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.ACTION_RECEIVER;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.BROADCAST_MESSAGE;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_KEY;
-import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_STRING;
+import static com.ezerski.vladislav.utils.constants.Constants.ACTION_INTENT;
+import static com.ezerski.vladislav.utils.constants.Constants.ACTION_RECEIVER;
+import static com.ezerski.vladislav.utils.constants.Constants.BROADCAST_MESSAGE;
+import static com.ezerski.vladislav.utils.constants.Constants.URL_KEY;
+import static com.ezerski.vladislav.utils.constants.Constants.URL_STRING;
 
 public class IntentServiceActivity extends ListActivity {
 

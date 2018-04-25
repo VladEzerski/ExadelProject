@@ -1,6 +1,8 @@
-package com.ezerski.vladislav.exadelproject.model;
+package com.ezerski.vladislav.utils.model;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
     private int userId;
     private int id;
     private String title;
@@ -9,6 +11,12 @@ public class Post {
     public Post(int userId, int id, String title, String body) {
         this.userId = userId;
         this.id = id;
+        this.title = title;
+        this.body = body;
+    }
+
+    public Post(int userId, String title, String body) {
+        this.userId = userId;
         this.title = title;
         this.body = body;
     }

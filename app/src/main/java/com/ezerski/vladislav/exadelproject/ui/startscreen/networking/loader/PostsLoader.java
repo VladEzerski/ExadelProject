@@ -3,12 +3,12 @@ package com.ezerski.vladislav.exadelproject.ui.startscreen.networking.loader;
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
 
-import com.ezerski.vladislav.exadelproject.services.DataLoader;
-import com.ezerski.vladislav.exadelproject.model.Post;
+import com.ezerski.vladislav.utils.network.DataLoader;
+import com.ezerski.vladislav.utils.model.Post;
 
 import java.util.List;
 
-import static com.ezerski.vladislav.exadelproject.constants.Constants.URL_STRING;
+import static com.ezerski.vladislav.utils.constants.Constants.URL_STRING;
 
 public class PostsLoader extends AsyncTaskLoader<List<Post>> {
 

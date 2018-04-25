@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.constants;
+package com.ezerski.vladislav.utils.constants;
 
 public class Constants {
     public static final String LOG_TAG = "myLogs";

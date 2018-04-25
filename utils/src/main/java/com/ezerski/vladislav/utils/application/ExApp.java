@@ -1,4 +1,4 @@
-package com.ezerski.vladislav.exadelproject.application;
+package com.ezerski.vladislav.utils.application;
 
 import android.app.Application;
 import android.content.Context;
