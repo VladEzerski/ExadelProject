@@ -11,6 +11,10 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        <activity android:name=".activity.PostActivity" />
+
+        <provider
+            android:name=".provider.PostsContentProvider"
+            android:authorities="com.ezerski.vladislav.database.provider.PostsContentProvider"
+            android:exported="false" />
     </application>
 </manifest>
