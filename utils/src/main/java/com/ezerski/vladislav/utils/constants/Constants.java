@@ -17,4 +17,9 @@ public class Constants {
     public static final String TASK1 = "task1";
     public static final String TASK2 = "task2";
     public static final String BROADCAST_ACTION = "broadcast action";
+
+    //Constants for database
+    public static final String DATA_ACTION_INTENT = "DATA_ACTION_INTENT";
+    public static final String DATA_ACTION_RECEIVER = "DATA_ACTION_RECEIVER";
+    public static final String DATA_BROADCAST_MESSAGE = "DATA_BROADCAST_MESSAGE";
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="action_bar_background">#dedd8409</color>
+    <color name="action_bar_text_color">#dfcece</color>
+    <color name="subtitle_color">#b7575555</color>
+    <color name="profile_view_color">#98bed1</color>
+</resources>

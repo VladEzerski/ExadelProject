@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item
+        android:id="@+id/nav_first_fragment"
+        android:icon="@drawable/android2"
+        android:title="@string/first" />
+
+    <item
+        android:id="@+id/nav_second_fragment"
+        android:icon="@drawable/android2"
+        android:title="@string/second" />
+
+    <item
+        android:id="@+id/nav_third_fragment"
+        android:icon="@drawable/android2"
+        android:title="@string/third" />
+    <item
+        android:id="@+id/nav_fourth_fragment"
+        android:icon="@drawable/android2"
+        android:title="@string/fourth" />
+    <item
+        android:id="@+id/nav_fifth_fragment"
+        android:icon="@drawable/android2"
+        android:title="@string/fifth" />
+</menu>
