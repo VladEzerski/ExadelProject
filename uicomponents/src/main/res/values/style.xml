@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/action_bar_background</item>
+        <item name="android:titleTextStyle">@style/MyTextAppearance</item>
+    </style>
+    <style name="MyTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/action_bar_text_color</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+</resources>

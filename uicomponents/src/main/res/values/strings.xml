@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UI Components</string>
+    <string name="title">Title</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="first">First</string>
+    <string name="second">Second</string>
+    <string name="third">Third</string>
+    <string name="fourth">Fourth</string>
+    <string name="fifth">Fifth</string>
+    <string name="profile">Profile</string>
+</resources>
